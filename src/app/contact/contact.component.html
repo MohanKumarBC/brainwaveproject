@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="input-form">
+      <form [formGroup]="userForm" (submit)="onSaveContact()">
+        <h2>Contact</h2>
+
+        <label for="number">id</label>
+        <input type="number" name="" id="number" formControlName="id" />
+        <label for="name">first_name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your first name"
+          formControlName="first_name"
+        />
+        <label for="name">last_name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your last name"
+          formControlName="last_name"
+        />
+        <label for="email">emailid</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          formControlName="emailId"
+        />
+        <label for="name">createdAt</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="createdAt"
+          formControlName="createdAt"
+        />
+        <label for="name">age</label>
+        <input
+          type="number"
+          id="number"
+          placeholder="Enter your age"
+          formControlName="age"
+        />
+        <label for="name">gender</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your gender"
+          formControlName="gender"
+        />
+        <label for="name">mobilenumber</label>
+        <input
+          type="number"
+          id="number"
+          placeholder="Enter your mobile number"
+          formControlName="mobilenumber"
+        />
+        <label for="name">pan_no</label>
+        <input
+          type="text"
+          id="text"
+          placeholder="Enter your pan_no"
+          formControlName="pan_no"
+        />
+        <label for="name">adhaar_no</label>
+        <input
+          type="number"
+          id="number"
+          placeholder="Enter your aadhaar_no"
+          formControlName="adhaar_no"
+        />
+        <label for="name">status</label>
+        <input type="text" value="true" formControlName="status" />
+        <button type="submit">Save Contact</button>
+      </form>
+    </div>
+    <div class="table-new">
+      <table class="table-class">
+        <thead class="t-head">
+          <tr class="table-row">
+            <th class="th-class">id</th>
+            <th class="th-class">first_name</th>
+            <th class="th-class">last_name</th>
+            <th class="th-class">emailid</th>
+            <th class="th-class">createdAt</th>
+            <th class="th-class">age</th>
+            <th class="th-class">gender</th>
+            <th class="th-class">mobilenumber</th>
+            <th class="th-class">pan_no</th>
+            <th class="th-class">aadhaar_no</th>
+            <th class="th-class">status</th>
+            <th class="th-class">Edit Contact</th>
+            <th class="th-class">Delete Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of allContacts" class="table-row">
+            <td class="td-class">{{ user.id }}</td>
+            <td class="td-class">{{ user.first_name }}</td>
+            <td class="td-class">{{ user.last_name }}</td>
+            <td class="td-class">{{ user.emailId }}</td>
+            <td class="td-class">{{ user.createdAt }}</td>
+            <td class="td-class">{{ user.age }}</td>
+            <td class="td-class">{{ user.gender }}</td>
+            <td class="td-class">{{ user.mobilenumber }}</td>
+            <td class="td-class">{{ user.pan_no }}</td>
+            <td class="td-class">{{ user.adhaar_no }}</td>
+            <td class="td-class">{{ user.status }}</td>
+            <td class="td-class">
+              <button class="button-class">Edit</button>
+            </td>
+            <td class="td-class">
+              <button class="button-class" (click)="deleteContact(user.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+<router-outlet></router-outlet>
